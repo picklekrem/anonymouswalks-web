@@ -1,16 +1,13 @@
 export const translations = {
   en: {
-    nav: { cta: 'Join Waitlist' },
+    nav: { cta: 'Download' },
     hero: {
-      badge: 'Coming to App Store',
+      badge: 'Now Available on App Store',
       title: 'Walk Together,',
       titleAccent: 'Anonymously.',
       subtitle:
         'Connect with strangers through voice. No faces, no profiles — just honest conversations.',
-      emailPlaceholder: 'your@email.com',
-      emailCta: 'Notify Me',
-      appStore: 'App Store — Coming Soon',
-      disclaimer: 'No spam. Unsubscribe anytime.',
+      appStore: 'Download on the App Store',
     },
     features: {
       title: 'Why Anonymous Walks?',
@@ -43,13 +40,15 @@ export const translations = {
         { step: '03', title: 'Start Walking', description: 'Have an honest, real conversation.' },
       ],
     },
-    waitlist: {
-      title: 'Be the first to know.',
+    download: {
+      title: 'Ready to start your first walk?',
       subtitle:
-        "We're launching soon. Join the waitlist and get notified the day we go live.",
+        'Download now and have your first honest, anonymous voice conversation tonight.',
+      appStore: 'Download on the App Store',
+      newsletterLabel: 'Or stay updated — we ship often.',
       placeholder: 'your@email.com',
-      cta: 'Join Waitlist',
-      success: "You're on the list! We'll reach out soon. 🎉",
+      cta: 'Subscribe',
+      success: "You're subscribed! We'll keep you in the loop.",
       error: 'Something went wrong. Try again.',
     },
     footer: {
@@ -58,17 +57,14 @@ export const translations = {
     },
   },
   tr: {
-    nav: { cta: 'Listeye Katıl' },
+    nav: { cta: 'İndir' },
     hero: {
-      badge: "App Store'a Geliyor",
+      badge: "App Store'da Şimdi Mevcut",
       title: 'Birlikte Yürü,',
       titleAccent: 'Anonim Olarak.',
       subtitle:
         'Sesle yabancılarla bağlan. Yüzler yok, profiller yok — sadece dürüst sohbetler.',
-      emailPlaceholder: 'eposta@adresin.com',
-      emailCta: 'Haber Ver',
-      appStore: "App Store — Çok Yakında",
-      disclaimer: 'Spam yok. İstediğin zaman çık.',
+      appStore: "App Store'dan İndir",
     },
     features: {
       title: 'Neden Anonim Yürüyüşler?',
@@ -101,13 +97,15 @@ export const translations = {
         { step: '03', title: 'Yürüyüşe Başla', description: 'Dürüst, gerçek bir sohbet başlat.' },
       ],
     },
-    waitlist: {
-      title: 'İlk sen haberdar ol.',
+    download: {
+      title: 'İlk yürüyüşüne hazır mısın?',
       subtitle:
-        'Yakında yayına giriyoruz. Listeye katıl, canlıya geçtiğimiz gün seni haberdar edelim.',
+        'Şimdi indir ve bu gece ilk dürüst, anonim sesli sohbetine başla.',
+      appStore: "App Store'dan İndir",
+      newsletterLabel: 'Veya güncel kal — sık sık yenilik çıkarıyoruz.',
       placeholder: 'eposta@adresin.com',
-      cta: 'Listeye Katıl',
-      success: 'Listedesin! Çok yakında haberdar edeceğiz. 🎉',
+      cta: 'Abone Ol',
+      success: 'Abone oldun! Gelişmelerden haberdar edeceğiz.',
       error: 'Bir şeyler ters gitti. Tekrar dene.',
     },
     footer: {
