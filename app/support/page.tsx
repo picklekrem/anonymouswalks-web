@@ -60,8 +60,8 @@ const content = {
       steps: [
         'Email us at support@anonwalksandtalks.com',
         'Use the subject line: "Data Deletion Request"',
-        'Include a brief description of what you'd like removed',
-        'We'll confirm deletion within 7 business days',
+        "Include a brief description of what you'd like removed",
+        "We'll confirm deletion within 7 business days",
       ],
     },
     footer: {
