@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
-import Globe from "@/components/ui/globe";
+import Mask from "@/components/ui/mask";
 import { cn } from "@/lib/utils";
 
 interface ScrollGlobeProps {
@@ -11,6 +11,7 @@ interface ScrollGlobeProps {
     title: string;
     subtitle?: string;
     description: string;
+    note?: string;
     align?: 'left' | 'center' | 'right';
     features?: { title: string; description: string }[];
     actions?: { label: string; variant: 'primary' | 'secondary'; onClick?: () => void }[];
@@ -186,7 +187,7 @@ export function ScrollGlobe({ sections, globeConfig = defaultGlobeConfig, classN
         }}
       >
         <div className="scale-75 sm:scale-90 lg:scale-100">
-          <Globe />
+          <Mask />
         </div>
       </div>
 
@@ -261,6 +262,16 @@ export function ScrollGlobe({ sections, globeConfig = defaultGlobeConfig, classN
                 </div>
               )}
             </div>
+
+            {section.note && (
+              <div className={cn(
+                "inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/40 text-xs font-medium mb-8 sm:mb-10",
+                section.align === 'center' && "mx-auto"
+              )}>
+                <span className="w-1 h-1 rounded-full bg-white/30 flex-shrink-0" />
+                {section.note}
+              </div>
+            )}
 
             {section.features && (
               <div className="grid gap-3 sm:gap-4 mb-8 sm:mb-10">

@@ -13,6 +13,7 @@ export default function Home() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   const t = translations[lang]
+  const s = t.sections
 
   async function subscribe() {
     if (!email) return
@@ -32,21 +33,20 @@ export default function Home() {
   const sections = [
     {
       id: 'hero',
-      badge: lang === 'en' ? 'Anonymous · Voice · Real' : 'Anonim · Ses · Gerçek',
-      title: lang === 'en' ? 'Walk Together,' : 'Birlikte Yürü,',
-      subtitle: lang === 'en' ? 'Anonymously.' : 'Anonim Olarak.',
-      description: lang === 'en'
-        ? 'Connect with strangers through voice. No faces, no profiles — just honest conversations that matter.'
-        : 'Sesle yabancılarla bağlan. Yüzler yok, profiller yok — sadece önemli, dürüst sohbetler.',
+      badge: s.hero.badge,
+      title: s.hero.title,
+      subtitle: s.hero.subtitle,
+      description: s.hero.description,
+      note: s.hero.disclaimer,
       align: 'left' as const,
       actions: [
         {
-          label: lang === 'en' ? 'Download on App Store' : "App Store'dan İndir",
+          label: s.hero.actions.download,
           variant: 'primary' as const,
           onClick: () => window.open(APP_STORE_URL, '_self'),
         },
         {
-          label: lang === 'en' ? 'Join Waitlist' : 'Bekleme Listesine Katıl',
+          label: s.hero.actions.waitlist,
           variant: 'secondary' as const,
           onClick: () => setShowWaitlist(true),
         },
@@ -54,60 +54,38 @@ export default function Home() {
     },
     {
       id: 'voice',
-      badge: lang === 'en' ? 'Voice First' : 'Ses Önce',
-      title: lang === 'en' ? 'Heard, Not Seen' : 'Duyulan, Görülmeyen',
-      description: lang === 'en'
-        ? 'In a world obsessed with appearances, AnonymousWalks strips it all away. Just your voice, just your words — pure human connection without judgment, without barriers, without pretense.'
-        : 'Görünüşlere takıntılı bir dünyada AnonymousWalks hepsini soyup atar. Sadece sesin, sadece sözlerin — yargısız, engelsiz, gösterişsiz saf insan bağlantısı.',
+      badge: s.voice.badge,
+      title: s.voice.title,
+      description: s.voice.description,
       align: 'center' as const,
     },
     {
       id: 'features',
-      badge: lang === 'en' ? 'Why AnonymousWalks' : 'Neden AnonymousWalks',
-      title: lang === 'en' ? 'Built for' : 'Şunun İçin Yapıldı:',
-      subtitle: lang === 'en' ? 'Real Connection.' : 'Gerçek Bağlantı.',
-      description: lang === 'en'
-        ? 'Every detail of AnonymousWalks is designed to protect you and help you connect deeply — no noise, no performance.'
-        : "AnonymousWalks'ın her detayı seni korumak ve derin bağlantı kurmanı sağlamak için tasarlandı — gürültü yok, performans yok.",
+      badge: s.features.badge,
+      title: s.features.title,
+      subtitle: s.features.subtitle,
+      description: s.features.description,
       align: 'left' as const,
-      features: [
-        {
-          title: lang === 'en' ? 'Truly Anonymous' : 'Gerçekten Anonim',
-          description: lang === 'en'
-            ? 'No usernames, no photos, no profiles. Your identity stays hidden — always.'
-            : 'Kullanıcı adı yok, fotoğraf yok, profil yok. Kimliğin her zaman gizli kalır.',
-        },
-        {
-          title: lang === 'en' ? 'Voice Only' : 'Sadece Ses',
-          description: lang === 'en'
-            ? 'Real conversations over voice. No text, no distractions — just your voice and theirs.'
-            : 'Sesle gerçek sohbetler. Metin yok, dikkat dağıtıcı yok — sadece sesin ve onlarınki.',
-        },
-        {
-          title: lang === 'en' ? 'Your Safe Space' : 'Güvenli Alanın',
-          description: lang === 'en'
-            ? 'Block, report, and end any conversation instantly. Safety is non-negotiable.'
-            : 'Engelle, raporla ve anlık olarak her konuşmayı sonlandır. Güvenlik pazarlık konusu değildir.',
-        },
-      ],
+      features: s.features.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
     },
     {
       id: 'download',
-      badge: lang === 'en' ? 'Ready?' : 'Hazır mısın?',
-      title: lang === 'en' ? 'Start Your First Walk' : 'İlk Yürüyüşünü Başlat',
-      subtitle: lang === 'en' ? 'Tonight.' : 'Bu Gece.',
-      description: lang === 'en'
-        ? 'Join thousands of people having honest, anonymous voice conversations every night. Free on iOS. No account required.'
-        : 'Her gece dürüst, anonim sesli sohbetler yapan binlerce kişiye katıl. iOS\'ta ücretsiz. Hesap gerekmez.',
+      badge: s.download.badge,
+      title: s.download.title,
+      subtitle: s.download.subtitle,
+      description: s.download.description,
       align: 'center' as const,
       actions: [
         {
-          label: lang === 'en' ? 'Download on App Store' : "App Store'dan İndir",
+          label: s.download.actions.download,
           variant: 'primary' as const,
           onClick: () => window.open(APP_STORE_URL, '_self'),
         },
         {
-          label: lang === 'en' ? 'Stay Updated' : 'Güncel Kal',
+          label: s.download.actions.stayUpdated,
           variant: 'secondary' as const,
           onClick: () => setShowWaitlist(true),
         },
@@ -183,7 +161,7 @@ export default function Home() {
           <div className="w-full sm:max-w-md bg-[#111] border border-white/10 rounded-t-3xl sm:rounded-3xl p-8 shadow-2xl">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-bold text-white">
-                {lang === 'en' ? 'Stay Updated' : 'Güncel Kal'}
+                {t.waitlist.title}
               </h3>
               <button
                 onClick={() => { setShowWaitlist(false); setStatus('idle'); setEmail('') }}
@@ -194,9 +172,7 @@ export default function Home() {
             </div>
 
             <p className="text-white/50 text-sm mb-6 leading-relaxed">
-              {lang === 'en'
-                ? "We ship often. Drop your email and we'll keep you in the loop."
-                : 'Sık sık yenilik çıkarıyoruz. E-postanı bırak, seni haberdar edelim.'}
+              {t.waitlist.description}
             </p>
 
             {status === 'success' ? (
