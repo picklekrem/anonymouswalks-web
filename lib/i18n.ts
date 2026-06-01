@@ -59,6 +59,10 @@ export const translations = {
         },
       },
     },
+    notDating: {
+      heading: 'Not a dating app. Not even close.',
+      body: "AnonymousTalks is for genuine human conversation — not for flirting, not for finding a partner, not for hookups. The people here want to talk. That's it.",
+    },
     waitlist: {
       title: 'Stay Updated',
       description: "We ship often. Drop your email and we'll keep you in the loop.",
@@ -133,6 +137,10 @@ export const translations = {
           stayUpdated: 'Güncel Kal',
         },
       },
+    },
+    notDating: {
+      heading: 'Dating uygulaması değil. Hiç değil.',
+      body: 'AnonymousTalks gerçek insan sohbeti için var — flört için değil, partner bulmak için değil, buluşmak için değil. Buradaki insanlar sadece konuşmak istiyor. Hepsi bu.',
     },
     waitlist: {
       title: 'Güncel Kal',
