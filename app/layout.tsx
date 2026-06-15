@@ -10,19 +10,19 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Anonymous Walks & Talks — Voice connections without identity',
+  title: 'blip — Voice connections without identity',
   description:
     'Connect with strangers through voice. No faces, no profiles — just honest conversations. Coming to App Store.',
   openGraph: {
-    title: 'Anonymous Walks & Talks',
+    title: 'blip',
     description: 'Voice connections without identity.',
-    url: 'https://anonwalksandtalks.com',
-    siteName: 'Anonymous Walks & Talks',
+    url: 'https://blipapp.com',
+    siteName: 'blip',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Anonymous Walks & Talks',
+    title: 'blip',
     description: 'Voice connections without identity.',
   },
 }
