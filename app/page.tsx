@@ -182,7 +182,7 @@ export default function Home() {
       <nav className="fixed top-0 inset-x-0 z-50 border-b border-white/[0.06] backdrop-blur-xl bg-black/75">
         <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
           <span className="font-bold text-base tracking-tight">
-            Anon<span className="text-[#8b7cf8]">Talks</span>
+            blip<span className="text-[#6E56CF]">.</span>
           </span>
           <div className="flex items-center gap-3">
             {/* EN/TR switcher */}
@@ -476,13 +476,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-bold text-sm">
-              Anon<span className="text-[#8b7cf8]">Talks</span>
+              blip<span className="text-[#6E56CF]">.</span>
             </span>
             <span className="text-white/10 select-none">—</span>
             <span className="text-white/30 text-sm">{t.footer.tagline}</span>
           </div>
           <p className="text-white/20 text-sm">
-            © {new Date().getFullYear()} AnonTalks. {t.footer.rights}
+            © {new Date().getFullYear()} blip. {t.footer.rights}
           </p>
         </div>
       </footer>

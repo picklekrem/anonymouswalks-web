@@ -10,7 +10,7 @@ const copy = {
   tr: {
     lang: 'EN',
     hook: 'Az önce bir stiker okuttun.',
-    appName: 'AnonymousTalks',
+    appName: 'blip',
     tagline: 'Yabancılarla sesli konuş. Tamamen anonim.',
     emotional: {
       heading: 'Bazen, seni hiç tanımayan biri seni en iyi anlayan oluyor.',
@@ -46,12 +46,12 @@ const copy = {
       success: 'Abone oldun! Gelişmelerden haberdar edeceğiz.',
       error: 'Bir şeyler ters gitti. Tekrar dene.',
     },
-    footer: 'AnonymousTalks · Tamamen anonim · iOS',
+    footer: 'blip · Tamamen anonim · iOS',
   },
   en: {
     lang: 'TR',
     hook: 'You just scanned a sticker.',
-    appName: 'AnonymousTalks',
+    appName: 'blip',
     tagline: 'Talk to strangers. Voice only. Fully anonymous.',
     emotional: {
       heading: "Sometimes, someone who doesn't know you understands you best.",
@@ -87,7 +87,7 @@ const copy = {
       success: "You're subscribed! We'll keep you in the loop.",
       error: 'Something went wrong. Try again.',
     },
-    footer: 'AnonymousTalks · Fully anonymous · iOS',
+    footer: 'blip · Fully anonymous · iOS',
   },
 } as const
 
@@ -122,7 +122,7 @@ export default function QRPage() {
       {/* ── STICKY TOP BAR ─────────────────────────────────────────────────── */}
       <div className="fixed top-0 inset-x-0 z-40 flex items-center justify-between px-5 h-14 border-b border-white/[0.06] backdrop-blur-xl bg-black/80">
         <span className="font-bold text-sm tracking-tight">
-          Anon<span className="text-[#8b7cf8]">Talks</span>
+          blip<span className="text-[#6E56CF]">.</span>
         </span>
         <button
           onClick={() => setLang(lang === 'tr' ? 'en' : 'tr')}

@@ -21,14 +21,14 @@ export const translations = {
         badge: 'Voice First',
         title: 'Heard, Not Seen',
         description:
-          'In a world obsessed with appearances, AnonymousTalks strips it all away. Just your voice, just your words — pure human connection without judgment, without barriers, without pretense.',
+          'In a world obsessed with appearances, blip strips it all away. Just your voice, just your words — pure human connection without judgment, without barriers, without pretense.',
       },
       features: {
-        badge: 'Why AnonymousTalks',
+        badge: 'Why blip',
         title: 'Built for',
         subtitle: 'Real Connection.',
         description:
-          'Every detail of AnonymousTalks is designed to protect you and help you connect deeply — no noise, no performance.',
+          'Every detail of blip is designed to protect you and help you connect deeply — no noise, no performance.',
         items: [
           {
             title: 'Truly Anonymous',
@@ -61,7 +61,7 @@ export const translations = {
     },
     notDating: {
       heading: 'Not a dating app. Not even close.',
-      body: "AnonymousTalks is for genuine human conversation — not for flirting, not for finding a partner, not for hookups. The people here want to talk. That's it.",
+      body: "blip is for genuine human conversation — not for flirting, not for finding a partner, not for hookups. The people here want to talk. That's it.",
     },
     waitlist: {
       title: 'Stay Updated',
@@ -100,10 +100,10 @@ export const translations = {
         badge: 'Anonim.',
         title: 'Duyulan, Görülmeyen',
         description:
-          'Görünüşlere takıntılı bir dünyada AnonymousTalks hepsinden kurtulmayı amaçlıyor. Sadece sesin, sadece sözlerin — yargısız, engelsiz, gösterişsiz saf insan bağlantısı.',
+          'Görünüşlere takıntılı bir dünyada blip hepsinden kurtulmayı amaçlıyor. Sadece sesin, sadece sözlerin — yargısız, engelsiz, gösterişsiz saf insan bağlantısı.',
       },
       features: {
-        badge: 'Neden AnonymousTalks',
+        badge: 'Neden blip',
         title: 'Şunun İçin Yapıldı:',
         subtitle: 'Gerçek Bağlantı.',
         description:
@@ -140,7 +140,7 @@ export const translations = {
     },
     notDating: {
       heading: 'Dating uygulaması değil. Hiç değil.',
-      body: 'AnonymousTalks gerçek insan sohbeti için var — flört için değil, partner bulmak için değil, buluşmak için değil. Buradaki insanlar sadece konuşmak istiyor. Hepsi bu.',
+      body: 'blip gerçek insan sohbeti için var — flört için değil, partner bulmak için değil, buluşmak için değil. Buradaki insanlar sadece konuşmak istiyor. Hepsi bu.',
     },
     waitlist: {
       title: 'Güncel Kal',
@@ -153,7 +153,7 @@ export const translations = {
       error: 'Bir şeyler ters gitti. Tekrar dene.',
     },
     footer: {
-      tagline: 'AnonymousTalks.',
+      tagline: 'anonim sesli sohbet.',
       rights: 'Tüm hakları saklıdır.',
     },
   },

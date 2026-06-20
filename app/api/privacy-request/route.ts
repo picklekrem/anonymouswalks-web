@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'AnonWalks Privacy <onboarding@resend.dev>',
+          from: 'blip Privacy <onboarding@resend.dev>',
           to: notifyEmail,
           subject,
           text: [

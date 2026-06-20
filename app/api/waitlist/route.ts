@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'AnonWalks Waitlist <onboarding@resend.dev>',
+          from: 'blip Waitlist <onboarding@resend.dev>',
           to: notifyEmail,
           subject: `New waitlist signup: ${email}`,
           text: `Someone joined the waitlist: ${email}`,

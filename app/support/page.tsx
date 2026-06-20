@@ -24,7 +24,7 @@ const content = {
       title: 'Frequently Asked Questions',
       items: [
         {
-          q: 'Is AnonTalks really anonymous?',
+          q: 'Is blip really anonymous?',
           a: 'Yes. We never collect your name, phone number, or any identifying information. No account is required. Your voice conversations are not recorded or stored.',
         },
         {
@@ -56,7 +56,7 @@ const content = {
     deletion: {
       title: 'Account & Data Deletion',
       description:
-        'Since AnonTalks requires no account, there is no persistent personal data tied to you. If you wish to remove any data associated with your device (such as Trust Score or block list), email us at the address above and we will erase it within 7 business days.',
+        'Since blip requires no account, there is no persistent personal data tied to you. If you wish to remove any data associated with your device (such as Trust Score or block list), email us at the address above and we will erase it within 7 business days.',
       steps: [
         'Email us at support@anonwalksandtalks.com',
         'Use the subject line: "Data Deletion Request"',
@@ -88,7 +88,7 @@ const content = {
       title: 'Sık Sorulan Sorular',
       items: [
         {
-          q: 'AnonTalks gerçekten anonim mi?',
+          q: 'blip gerçekten anonim mi?',
           a: 'Evet. İsmin, telefon numaran veya seni tanımlayan hiçbir bilgini toplamıyoruz. Hesap gerekmez. Sesli görüşmeler kaydedilmez veya saklanmaz.',
         },
         {
@@ -120,7 +120,7 @@ const content = {
     deletion: {
       title: 'Hesap ve Veri Silme',
       description:
-        'AnonTalks hesap gerektirmediğinden sana bağlı kalıcı kişisel veri bulunmaz. Cihazınla ilişkilendirilmiş verilerin (Güven Puanı, engel listesi gibi) silinmesini istiyorsan yukarıdaki adrese e-posta gönder; 7 iş günü içinde sileceğiz.',
+        'blip hesap gerektirmediğinden sana bağlı kalıcı kişisel veri bulunmaz. Cihazınla ilişkilendirilmiş verilerin (Güven Puanı, engel listesi gibi) silinmesini istiyorsan yukarıdaki adrese e-posta gönder; 7 iş günü içinde sileceğiz.',
       steps: [
         'support@anonwalksandtalks.com adresine e-posta gönder',
         'Konu satırına "Veri Silme Talebi" yaz',
@@ -178,7 +178,7 @@ export default function SupportPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/60">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-bold text-lg tracking-tight text-white">
-            Anon<span className="text-primary">Walks</span>
+            blip<span className="text-primary">.</span>
           </Link>
           <div className="flex items-center gap-4">
             <div className="flex items-center bg-white/5 rounded-full p-1 border border-white/10">
@@ -276,13 +276,13 @@ export default function SupportPage() {
         <div className="max-w-4xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="font-bold text-base text-white">
-              Anon<span className="text-primary">Walks</span>
+              blip<span className="text-primary">.</span>
             </span>
             <span className="text-white/20 text-sm">—</span>
             <span className="text-white/40 text-sm">{t.footer.tagline}</span>
           </div>
           <p className="text-white/20 text-sm">
-            © {new Date().getFullYear()} AnonWalks. {t.footer.rights}
+            © {new Date().getFullYear()} blip. {t.footer.rights}
           </p>
         </div>
       </footer>

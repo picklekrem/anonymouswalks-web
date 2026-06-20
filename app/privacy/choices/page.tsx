@@ -147,8 +147,8 @@ export default function PrivacyChoicesPage() {
 
       <footer className="border-t border-white/5 bg-black">
         <div className="max-w-4xl mx-auto px-6 py-8 flex items-center justify-between">
-          <span className="font-bold text-base text-white">Anon<span className="text-primary">Walks</span></span>
-          <p className="text-white/20 text-sm">© {new Date().getFullYear()} AnonWalks.</p>
+          <span className="font-bold text-base text-white">blip<span className="text-primary">.</span></span>
+          <p className="text-white/20 text-sm">© {new Date().getFullYear()} blip.</p>
         </div>
       </footer>
     </div>
@@ -185,7 +185,7 @@ const copy = {
     submitBtn: 'Submit Request',
     successMsg: 'Request received. We\'ll get back to you within 7 business days.',
     errorMsg: 'Something went wrong. Please try again or email us directly.',
-    note: 'Since AnonTalks requires no account, we use your email only to respond to this request. It will not be stored beyond that.',
+    note: 'Since blip requires no account, we use your email only to respond to this request. It will not be stored beyond that.',
     privacyLink: 'Privacy Policy',
     supportLink: 'Support',
   },
@@ -218,7 +218,7 @@ const copy = {
     submitBtn: 'Talebi Gönder',
     successMsg: 'Talebini aldık. 7 iş günü içinde sana döneceğiz.',
     errorMsg: 'Bir şeyler ters gitti. Tekrar dene veya doğrudan e-posta gönder.',
-    note: 'AnonTalks hesap gerektirmediğinden e-postanı yalnızca bu talebe yanıt vermek için kullanıyoruz. Bunun ötesinde saklanmaz.',
+    note: 'blip hesap gerektirmediğinden e-postanı yalnızca bu talebe yanıt vermek için kullanıyoruz. Bunun ötesinde saklanmaz.',
     privacyLink: 'Gizlilik Politikası',
     supportLink: 'Destek',
   },

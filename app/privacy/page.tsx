@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-black/60">
         <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-bold text-lg tracking-tight text-white">
-            Anon<span className="text-primary">Walks</span>
+            blip<span className="text-primary">.</span>
           </Link>
           <div className="flex items-center gap-4">
             <div className="flex items-center bg-white/5 rounded-full p-1 border border-white/10">
@@ -66,8 +66,8 @@ export default function PrivacyPage() {
       {/* Footer */}
       <footer className="border-t border-white/5 bg-black">
         <div className="max-w-4xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="font-bold text-base text-white">Anon<span className="text-primary">Walks</span></span>
-          <p className="text-white/20 text-sm">© {new Date().getFullYear()} AnonWalks. {lang === 'en' ? 'All rights reserved.' : 'Tüm hakları saklıdır.'}</p>
+          <span className="font-bold text-base text-white">blip<span className="text-primary">.</span></span>
+          <p className="text-white/20 text-sm">© {new Date().getFullYear()} blip. {lang === 'en' ? 'All rights reserved.' : 'Tüm hakları saklıdır.'}</p>
         </div>
       </footer>
     </div>
@@ -88,7 +88,7 @@ function EnglishPolicy() {
     <div>
       <Section title="1. Overview">
         <p>
-          AnonTalks ("we", "our", "the app") is designed from the ground up to protect your privacy.
+          blip ("we", "our", "the app") is designed from the ground up to protect your privacy.
           No account is required. We do not collect your name, email address, phone number, or any
           other personally identifiable information.
         </p>
@@ -178,7 +178,7 @@ function EnglishPolicy() {
 
       <Section title="8. Children's Privacy">
         <p>
-          AnonTalks is not intended for users under the age of 17. We do not knowingly collect data
+          blip is not intended for users under the age of 17. We do not knowingly collect data
           from children. If you believe a child has used the app, please contact us immediately.
         </p>
       </Section>
@@ -208,7 +208,7 @@ function TurkishPolicy() {
     <div>
       <Section title="1. Genel Bakış">
         <p>
-          AnonTalks ("biz", "uygulama"), gizliliğini korumak amacıyla sıfırdan tasarlanmıştır.
+          blip ("biz", "uygulama"), gizliliğini korumak amacıyla sıfırdan tasarlanmıştır.
           Hesap gerekmez. Adın, e-posta adresin, telefon numaran veya seni tanımlayan herhangi
           bir bilgi toplanmaz.
         </p>
@@ -299,7 +299,7 @@ function TurkishPolicy() {
 
       <Section title="8. Çocukların Gizliliği">
         <p>
-          AnonTalks, 17 yaşın altındaki kullanıcılara yönelik değildir. Çocuklardan bilerek veri
+          blip, 17 yaşın altındaki kullanıcılara yönelik değildir. Çocuklardan bilerek veri
           toplamıyoruz. Bir çocuğun uygulamayı kullandığını düşünüyorsan lütfen hemen bizimle
           iletişime geç.
         </p>
