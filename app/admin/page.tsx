@@ -153,25 +153,31 @@ const END_REASON_LABELS: Record<string, string> = {
   error: 'Hata',
 }
 
+// "Ongoing" is determined by ended_at, not end_reason — older rows were
+// closed (end_walk set ended_at) without ever recording a reason, so
+// end_reason alone would wrongly label finished calls as still active.
 function callEndReasonText(call: CallListItem) {
-  if (!call.end_reason) return 'Devam ediyor'
+  if (!call.ended_at) return 'Devam ediyor'
   if (call.end_reason === 'user1_left') return `${call.user1_username} ayrıldı`
   if (call.end_reason === 'user2_left') return `${call.user2_username} ayrıldı`
-  return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  if (call.end_reason) return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  return call.has_report ? 'Rapor edildi' : 'Tamamlandı'
 }
 
 function userCallEndReasonText(call: UserCallHistoryEntry) {
-  if (!call.end_reason) return 'Devam ediyor'
+  if (!call.ended_at) return 'Devam ediyor'
   if (call.who_left === 'self') return 'Kullanıcı ayrıldı'
   if (call.who_left === 'partner') return 'Karşı taraf ayrıldı'
-  return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  if (call.end_reason) return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  return 'Tamamlandı'
 }
 
 function callDetailEndReasonText(call: CallDetail) {
-  if (!call.end_reason) return 'Devam ediyor'
+  if (!call.ended_at) return 'Devam ediyor'
   if (call.end_reason === 'user1_left') return `${call.user1?.username ?? 'Kullanıcı 1'} ayrıldı`
   if (call.end_reason === 'user2_left') return `${call.user2?.username ?? 'Kullanıcı 2'} ayrıldı`
-  return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  if (call.end_reason) return END_REASON_LABELS[call.end_reason] ?? call.end_reason
+  return call.reports.length > 0 ? 'Rapor edildi' : 'Tamamlandı'
 }
 
 function Modal({ title, onClose, children, wide }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
