@@ -197,6 +197,8 @@ function Modal({ title, onClose, children, wide }: { title: string; onClose: () 
 export default function AdminPage() {
   const [apiKey, setApiKey] = useState('')
   const [inputKey, setInputKey] = useState('')
+  const [authError, setAuthError] = useState(false)
+  const [authChecking, setAuthChecking] = useState(false)
 
   const [tab, setTab] = useState<Tab>('users')
   const [stats, setStats] = useState<Stats | null>(null)
@@ -236,33 +238,48 @@ export default function AdminPage() {
     if (stored) setApiKey(stored)
   }, [])
 
-  const apiFetch = useCallback(
-    async (path: string, opts?: RequestInit) => {
-      const res = await fetch(`${API_URL}${path}`, {
-        ...opts,
-        headers: { 'X-Admin-Key': apiKey, 'Content-Type': 'application/json', ...opts?.headers },
-      })
-      if (res.status === 401) throw new Error('unauthorized')
-      if (!res.ok) throw new Error('request_failed')
-      if (res.status === 204) return null
-      return res.json()
-    },
-    [apiKey],
-  )
-
-  const login = () => {
-    if (!inputKey.trim()) return
-    sessionStorage.setItem(KEY_STORAGE, inputKey.trim())
-    setApiKey(inputKey.trim())
-  }
-
-  const logout = () => {
+  const logout = useCallback(() => {
     sessionStorage.removeItem(KEY_STORAGE)
     setApiKey('')
     setStats(null)
     setUsers([])
     setReports([])
     setCalls([])
+  }, [])
+
+  const apiFetch = useCallback(
+    async (path: string, opts?: RequestInit) => {
+      const res = await fetch(`${API_URL}${path}`, {
+        ...opts,
+        headers: { 'X-Admin-Key': apiKey, 'Content-Type': 'application/json', ...opts?.headers },
+      })
+      if (res.status === 401) {
+        logout()
+        setAuthError(true)
+        throw new Error('unauthorized')
+      }
+      if (!res.ok) throw new Error('request_failed')
+      if (res.status === 204) return null
+      return res.json()
+    },
+    [apiKey, logout],
+  )
+
+  const login = async () => {
+    const key = inputKey.trim()
+    if (!key) return
+    setAuthChecking(true)
+    setAuthError(false)
+    try {
+      const res = await fetch(`${API_URL}/admin/stats`, { headers: { 'X-Admin-Key': key } })
+      if (!res.ok) throw new Error('unauthorized')
+      sessionStorage.setItem(KEY_STORAGE, key)
+      setApiKey(key)
+    } catch {
+      setAuthError(true)
+    } finally {
+      setAuthChecking(false)
+    }
   }
 
   const fetchStats = useCallback(async () => {
@@ -399,16 +416,22 @@ export default function AdminPage() {
             <input
               type="password"
               value={inputKey}
-              onChange={e => setInputKey(e.target.value)}
+              onChange={e => { setInputKey(e.target.value); setAuthError(false) }}
               onKeyDown={e => e.key === 'Enter' && login()}
               placeholder="admin key girin"
-              className="px-4 py-3 rounded-xl bg-background border border-border text-primary placeholder-tertiary text-sm outline-none focus:border-accent/60 transition-colors"
+              className={`px-4 py-3 rounded-xl bg-background border text-primary placeholder-tertiary text-sm outline-none transition-colors ${
+                authError ? 'border-destructive/60 focus:border-destructive' : 'border-border focus:border-accent/60'
+              }`}
             />
+            {authError && (
+              <p className="text-destructive text-xs -mt-2">Geçersiz admin key</p>
+            )}
             <button
               onClick={login}
-              className="py-3 rounded-xl bg-accent hover:bg-accent-light text-white text-sm font-semibold transition-colors"
+              disabled={authChecking}
+              className="py-3 rounded-xl bg-accent hover:bg-accent-light disabled:opacity-60 text-white text-sm font-semibold transition-colors"
             >
-              Giriş Yap
+              {authChecking ? 'Kontrol ediliyor...' : 'Giriş Yap'}
             </button>
           </div>
         </div>
